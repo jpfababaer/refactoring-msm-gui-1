@@ -1,3 +1,4 @@
+#NOTES -> start at movie.rb
 Rails.application.routes.draw do
   get("/", { :controller => "misc", :action => "homepage" })
 

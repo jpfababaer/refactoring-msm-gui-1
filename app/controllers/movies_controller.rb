@@ -7,8 +7,8 @@ class MoviesController < ApplicationController
 
   def show
     the_id = params.fetch("path_id")
-    @the_movie = Movie.find(the_id)
-
+    @the_movie = Movie.where( id: the_id).at(0)
+    
     render({ :template => "movie_templates/show" })
   end
 

@@ -130,11 +130,8 @@
     </th>
   </tr>
 
-  <% the_id = @the_director.id %>
-
-  <% matching_movies = Movie.where({ :director_id => the_id }) %>
-
-  <% films = matching_movies.order({ :year => :asc }) %>
+  <!--3 @the_director is defined inside of method "show" (directors_controller.rb). After defining the method "filmography" (in director.rb)-> we can start access the column data inside of Instance Director -->
+  <% films = @the_director.filmography.order({ :year => :asc }) %>
 
   <% films.each do |a_movie| %>
     <tr>
